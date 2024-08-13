@@ -1,1 +1,3 @@
-"# switchIsNotFasterThanIf" 
+For modern C++ compilers, if is as fast as switch because it is optimized the same. After many tests, it seems like the only case where switch can be faster, is if has some other things like < or ||, and that confuses the compiler when making the jump table. So a simple if with many || operators for example, will be optimized perfectly. Also, the compiler managed to make a jump table every time, so you will never have a big difference. The biggest difference I was able to get was 10%, and for 99% of cases, if and switch generate the SAME asembley. You can test the code here:
+
+https://quick-bench.com/
